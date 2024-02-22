@@ -11,16 +11,6 @@ const Navbar = () => {
   const [fix, setFixed] = React.useState(false);
   const [isAuth, setIsAuth] = React.useState(false);
 
-  function changeFix() {
-    console.log(window.scrollY)
-    if (window.scrollY > 150) {
-      setFixed(true);
-    } else {
-      setFixed(false);
-    }
-  }
-
-  window.addEventListener('scroll', changeFix);
   return (
     <Disclosure as="nav"
                 className={classNames(fix ? "top-0" : "-top-15", "fixed z-10 bg-gray-900 w-full backdrop-filter backdrop-blur-lg bg-opacity-20")}>
