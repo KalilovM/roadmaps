@@ -9,6 +9,7 @@ import {
 } from '@heroicons/react/20/solid'
 import { BoltIcon, CalendarDaysIcon, UsersIcon } from '@heroicons/react/24/outline'
 import Image from "next/image";
+import Navbar from '@/components/Navbar';
 
 interface IconProps {
   fill?: string
@@ -169,6 +170,8 @@ const footerNavigation = {
 
 export default function Home() {
   return (
+    <>
+    <Navbar/>
     <div className="bg-gray-900">
       <main>
         {/* Hero section */}
@@ -489,5 +492,6 @@ export default function Home() {
         </div>
       </footer>
     </div>
+    </>
   )
 }

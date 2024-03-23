@@ -2,6 +2,7 @@
 
 import {useForm, SubmitHandler} from "react-hook-form";
 import Input from "@/components/Input";
+import { useRouter } from "next/navigation";
 
 
 export interface IFormValues {
@@ -11,6 +12,7 @@ export interface IFormValues {
 
 export default function Login() {
   const {register, handleSubmit, formState: {errors}} = useForm<IFormValues>();
+  const router = useRouter()
   const onSubmit: SubmitHandler<IFormValues> = data => {
     fetch("/api/login", {
       method: "POST",
@@ -21,6 +23,7 @@ export default function Login() {
     }).then(res => {
       if (res.ok) {
         // redirect to dashboard
+        router.push("/dashboard")
       } else {
         console.log(res.json())
         // else block
