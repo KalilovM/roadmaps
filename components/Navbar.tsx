@@ -3,7 +3,7 @@ import React from 'react';
 import {Disclosure, Menu, Transition} from '@headlessui/react';
 import {BellIcon, XMarkIcon, Bars3Icon} from '@heroicons/react/20/solid';
 import {Fragment} from 'react';
-import {classNames} from "@/utils/lib";
+import {classNames} from "@/shared/utils/lib";
 import Image from "next/image";
 import Link from "next/link";
 

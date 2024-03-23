@@ -11,10 +11,22 @@ export interface IFormValues {
 
 export default function Login() {
   const {register, handleSubmit, formState: {errors}} = useForm<IFormValues>();
-  const onSubmit: SubmitHandler<IFormValues> = data => (
-  //   global state manager
-    console.log(data)
-  )
+  const onSubmit: SubmitHandler<IFormValues> = data => {
+    fetch("/api/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then(res => {
+      if (res.ok) {
+        // redirect to dashboard
+      } else {
+        console.log(res.json())
+        // else block
+      }
+    })
+  }
 
   return (
     <>
